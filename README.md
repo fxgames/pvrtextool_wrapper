@@ -35,6 +35,12 @@ Then you should copy PVRTexTool from this repository to Tools directory - over y
 
 Just rename PVRTexTool_orig to PVRTexTool
 
+## Building
+
+No building is nescessary for Mac, because it's a simple shell script.
+
+For windows there is already a binary compiled with Mono. It's vainila .NET without any dependencies and can be build in VS without problems
+
 ## Notice on Unity3D update
 
 You should perform installation after every Unity3D update, because after every update unity would just replace PVRTexTool with it's own.
