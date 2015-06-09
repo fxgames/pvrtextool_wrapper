@@ -1,0 +1,6 @@
+#!/bin/bash
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+NEW=`echo "$@" | sed -e "s/etcslowperceptual/etcfast/g"`
+NEW=`echo "$NEW" | sed -e "s/pvrtcbest/pvrtcfastest/g"`
+echo "$NEW" > $DIR/PVRTexTool.cache
+exec $DIR/PVRTexTool_orig $NEW
