@@ -25,7 +25,7 @@ Find your Unity3D installation's Tools dirrectory:
 
 Mac: `/Applications/Unity/Unity.app/Contents/Tools`
 
-Windows: `C:\Program Files\Unity\Editor\Data\Tools\`
+Windows: `C:\Program Files (x86)\Unity\Editor\Data\Tools\`
 
 There your should find `PVRTexTool` (on Mac) or `PVRTexTool.exe` (on Windows). You should rename it to `PVRTexTool_orig` (on Mac) or to `PVRTexTool_orig.exe` (on Windows).
 
