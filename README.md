@@ -4,20 +4,19 @@
 
 Slow PVRTexTool performance on high compression quality settings was always a bane of Unity development. This small utility is supposed to replace PVRTexTool binary and change quality settings when PVRTexTool is run.
 
-This is not recompiled or some hacked PVRTexTool, this is just the smallest possible wrapper that launches original PVRTexTool with some commandline parameters changed. Before copying thin over your original, you should copy original PVRTexTool.exe to PVRTexTool_orig.exe - the last one would be called from wrapper.
+This is not recompiled or some hacked PVRTexTool, this is just the smallest possible wrapper that launches original PVRTexTool with some commandline parameters changed. Before copying this over your original, you should copy original PVRTexTool.exe to PVRTexTool_orig.exe - the last one would be called from wrapper.
 
 ## Why
 
 We building all our projects on build server. We don't want our developers to suffer abysmally long time when someone pushes new texture or when they change project type. That why all our developers use this wrapper to improve speed of texture compression.
 
-Buildserver use original Unity3D instalation and always processs texture as intended, so we end up with fast development and slow builds (sometimes).
-
+Buildserver use original Unity3D instalation and always processs texture as intended, so we end up with fast development and slow production builds (sometimes).
 
 ## For whom
 
-Use this wisely. Using this utility whould result in your Best compressions setting to work as Fast (or even faster) with texture quality suffer accordingly. 
+Use this wisely. Using this utility whould result in your compressions setting to work as Fast (or even faster - unity use 1 level above worst for Fast quality setting) with texture quality suffer accordingly. 
 
-The only time you should need this if you have a buildserver that would build your builds with original PVRTexTool.
+The only time you should need this if you have a buildserver that would build your builds with original PVRTexTool, when going to production.
 
 ## How
 
@@ -29,7 +28,7 @@ Windows: `C:\Program Files (x86)\Unity\Editor\Data\Tools\`
 
 There your should find `PVRTexTool` (on Mac) or `PVRTexTool.exe` (on Windows). You should rename it to `PVRTexTool_orig` (on Mac) or to `PVRTexTool_orig.exe` (on Windows).
 
-Then you should copy PVRTexTool from this repository to Tools directory - over your old PVRTexTool binary.
+Then you should copy PVRTexTool (or PVRTexTool.exe for Windows) from this repository to Tools directory - over your old PVRTexTool binary.
 
 ## Uninstall
 

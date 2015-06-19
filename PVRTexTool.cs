@@ -1,6 +1,8 @@
 using System;
 using System.IO;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
+
 
 namespace ProcessExitSample
 {
@@ -12,9 +14,16 @@ namespace ProcessExitSample
             {
 
                 var old_args = String.Join(" ", args);
+                var new_args = old_args;
 
-                var new_args = old_args.Replace("etcslowperceptual","etcfast");
-                new_args = new_args.Replace("pvrtcbest","pvrtcfastest");
+                if (old_args.Contains("-q etc"))
+                {
+                    new_args = new Regex("-q [A-Za-z]*").Replace(new_args,"-q etcfast");
+                }
+                else if (old_args.Contains("-q pvrtc"))
+                {
+                    new_args = new Regex("-q [A-Za-z]*").Replace(new_args,"-q pvrtcfastest");
+                }
 
                 //Console.WriteLine(new_args);
                 Process firstProc = new Process();

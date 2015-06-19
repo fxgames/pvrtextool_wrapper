@@ -1,6 +1,15 @@
 #!/bin/bash
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-NEW=`echo "$@" | sed -e "s/etcslowperceptual/etcfast/g"`
-NEW=`echo "$NEW" | sed -e "s/pvrtcbest/pvrtcfastest/g"`
+
+NEW=`echo "$@"`
+
+if [[ $NEW == *"-q etc"* ]]
+then
+	NEW=`echo "$@" | sed -e "s/-q [[:alpha:]]*/-q etcfast/g"`
+elif [[ $NEW == *"-q pvrtc"* ]]
+then
+	NEW=`echo "$NEW" | sed -e "s/-q [[:alpha:]]*/-q pvrtcfastest/g"`
+fi
+
 echo "$NEW" > $DIR/PVRTexTool.cache
 exec $DIR/PVRTexTool_orig $NEW
