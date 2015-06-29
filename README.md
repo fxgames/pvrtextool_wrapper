@@ -20,6 +20,10 @@ The only time you should need this if you have a buildserver that would build yo
 
 ## How
 
+For MacOS just run `install_macos.sh`
+
+else:
+
 Find your Unity3D installation's Tools dirrectory:
 
 Mac: `/Applications/Unity/Unity.app/Contents/Tools`
