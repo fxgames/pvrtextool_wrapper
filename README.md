@@ -20,7 +20,7 @@ The only time you should need this if you have a buildserver that would build yo
 
 ## How
 
-For MacOS just run `install_macos.sh`
+For MacOS just run `macos_install.sh`
 
 else:
 
@@ -36,7 +36,9 @@ Then you should copy PVRTexTool (or PVRTexTool.exe for Windows) from this reposi
 
 ## Uninstall
 
-Just rename PVRTexTool_orig to PVRTexTool
+On MacOS you can run `macos_uninstall.sh`. 
+
+On Windows: Just rename PVRTexTool_orig to PVRTexTool
 
 ## Building
 
