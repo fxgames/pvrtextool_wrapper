@@ -8,9 +8,9 @@ do
 
 	echo "Uninstalling from ${unity_dir}"
 
-	if [ -f $ORIGINAL_LOCATION ]; then
+	if [ -f "$ORIGINAL_LOCATION" ]; then
 		echo "Removing wrapper"
-		cp $ORIGINAL_LOCATION $WRAPPER_LOCATION
+		cp "$ORIGINAL_LOCATION" "$WRAPPER_LOCATION"
 		echo "Done"
 	else
 		echo "Original PVRTexTool not found. Doing nothing."

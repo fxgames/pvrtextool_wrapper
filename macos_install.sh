@@ -6,14 +6,14 @@ do
 
 	echo "Installing into ${unity_dir}"
 
-	if [ -f $COPY_OF_ORIGINAL_LOCATION ]; then
+	if [ -f "$COPY_OF_ORIGINAL_LOCATION" ]; then
 		echo "Already installed here."
 	else
-		if [ -f $ORIGINAL_LOCATION ]; then
+		if [ -f "$ORIGINAL_LOCATION" ]; then
 			echo "Creating a copy of the original"
-			cp ${ORIGINAL_LOCATION} ${COPY_OF_ORIGINAL_LOCATION}
+			cp "${ORIGINAL_LOCATION}" "${COPY_OF_ORIGINAL_LOCATION}"
 			echo "Copying wrapper to ${COPY_OF_ORIGINAL_LOCATION}"
-			cp PVRTexTool $ORIGINAL_LOCATION
+			cp PVRTexTool "$ORIGINAL_LOCATION"
 			echo "Done"
 		else
 			echo "Unity PVRTexTool not found. Doing nothing."
